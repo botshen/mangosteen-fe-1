@@ -1,5 +1,5 @@
-import { defineComponent } from "vue";
-import { RouterView } from "vue-router";
+import { defineComponent } from 'vue'
+import { RouterView } from 'vue-router'
 
 export const App = defineComponent({
   setup() {
@@ -21,6 +21,6 @@ export const App = defineComponent({
         </div>
         <footer>页脚</footer>
       </>
-    );
+    )
   },
-});
+})
