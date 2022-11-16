@@ -10,6 +10,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "sass": "^1.56.1",
     "vue": "3.2.31",
     "vue-router": "4.0.14"
   },
