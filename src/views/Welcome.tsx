@@ -1,17 +1,11 @@
 import type { VNode } from 'vue'
-import { Transition, defineComponent, ref, watchEffect } from 'vue'
+import { Transition, defineComponent, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import { RouterView } from 'vue-router'
-import { useSwipe } from '../hooks/useSwipe'
 import s from './Welcome.module.scss'
 export const Welcome = defineComponent({
   setup: () => {
-    const main = ref<HTMLElement | null>(null)
-    const { direction, swiping } = useSwipe(main)
-    watchEffect(() => {
-      // eslint-disable-next-line no-console
-      console.log(swiping.value, direction.value)
-    })
+    const main = ref<HTMLElement>()
     return () => <div class={s.wrapper}>
       <header>
         <svg>
@@ -21,7 +15,7 @@ export const Welcome = defineComponent({
       </header>
       <main class={s.main} ref={main}>
         <RouterView name="main">
-          {({ Component: X }: { Component: VNode; route: RouteLocationNormalizedLoaded }) =>
+          {({ Component: X, route: R }: { Component: VNode; route: RouteLocationNormalizedLoaded }) =>
             <Transition enterFromClass={s.slide_fade_enter_from} enterActiveClass={s.slide_fade_enter_active}
               leaveToClass={s.slide_fade_leave_to} leaveActiveClass={s.slide_fade_leave_active}>
               {X}
