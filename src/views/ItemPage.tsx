@@ -1,15 +1,15 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import s from './ItemPage.module.scss'
+import { RouterView } from 'vue-router'
 export const ItemPage = defineComponent({
   props: {
     name: {
       type: String as PropType<string>,
     },
   },
-  setup: (props, context) => {
+  setup: () => {
     return () => (
-      <div class={s.wrapper}>hi</div>
+      <RouterView />
     )
   },
 })

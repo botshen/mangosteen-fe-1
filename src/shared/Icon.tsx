@@ -3,7 +3,7 @@ import { defineComponent } from 'vue'
 import s from './Icon.module.scss'
 
 export type IconName = 'add' | 'chart' | 'clock' | 'cloud' |
-'mangosteen' | 'pig' | 'menu' | 'charts' | 'notify' | 'export'
+'mangosteen' | 'pig' | 'menu' | 'charts' | 'notify' | 'export' | 'left'
 
 export const Icon = defineComponent({
   props: {
@@ -15,7 +15,7 @@ export const Icon = defineComponent({
       type: Function as PropType<(e: MouseEvent) => void>,
     },
   },
-  setup: (props) => {
+  setup: (props, context) => {
     return () => (
       <svg class={s.icon} onClick={props.onClick}>
         <use xlinkHref={`#${props.name}`}></use>
