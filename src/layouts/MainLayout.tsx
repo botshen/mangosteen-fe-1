@@ -1,5 +1,5 @@
-import { defineComponent } from 'vue'
-import { Navbar } from '../shared/Navbar'
+import { defineComponent, PropType } from 'vue';
+import { Navbar } from '../shared/Navbar';
 export const MainLayout = defineComponent({
   setup: (props, context) => {
     return () => (
@@ -13,5 +13,5 @@ export const MainLayout = defineComponent({
         {context.slots.default?.()}
       </div>
     )
-  },
+  }
 })
