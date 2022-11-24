@@ -1,15 +1,17 @@
-import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
-import { RouterView } from 'vue-router'
+import { defineComponent, PropType } from 'vue';
+import { RouterView } from 'vue-router';
+import { MainLayout } from '../layouts/MainLayout';
+import { Icon } from '../shared/Icon';
+import s from './ItemPage.module.scss';
 export const ItemPage = defineComponent({
   props: {
     name: {
-      type: String as PropType<string>,
-    },
+      type: String as PropType<string>
+    }
   },
-  setup: () => {
+  setup: (props, context) => {
     return () => (
       <RouterView />
     )
-  },
+  }
 })

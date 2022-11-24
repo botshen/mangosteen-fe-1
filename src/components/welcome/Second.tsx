@@ -1,5 +1,5 @@
-import type { FunctionalComponent } from 'vue'
-import s from './welcome.module.scss'
+import s from './welcome.module.scss';
+import { FunctionalComponent } from 'vue';
 
 export const Second: FunctionalComponent = () => {
   return <div class={s.card}>

@@ -1,6 +1,6 @@
-import { defineComponent } from 'vue'
-import { RouterView } from 'vue-router'
-import './App.scss'
+import { defineComponent, Transition, VNode } from "vue";
+import { RouteLocationNormalizedLoaded, RouterView } from "vue-router";
+import "./App.scss"
 
 export const App = defineComponent({
   setup() {
@@ -9,5 +9,5 @@ export const App = defineComponent({
         <RouterView />
       </div>
     )
-  },
+  }
 })

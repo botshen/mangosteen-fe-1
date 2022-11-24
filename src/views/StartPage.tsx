@@ -1,14 +1,15 @@
-import { defineComponent, ref } from 'vue'
-import { RouterLink } from 'vue-router'
-import { MainLayout } from '../layouts/MainLayout'
-import { Button } from '../shared/Button'
-import { Center } from '../shared/Center'
-import { FloatButton } from '../shared/FloatButton'
-import { Icon } from '../shared/Icon'
-import { Overlay } from '../shared/Overlay'
-import s from './StartPage.module.scss'
+import { defineComponent, ref } from 'vue';
+import { RouterLink } from 'vue-router';
+import { MainLayout } from '../layouts/MainLayout';
+import { Button } from '../shared/Button';
+import { Center } from '../shared/Center';
+import { FloatButton } from '../shared/FloatButton';
+import { Icon } from '../shared/Icon';
+import { Navbar } from '../shared/Navbar';
+import { Overlay } from '../shared/Overlay';
+import s from './StartPage.module.scss';
 export const StartPage = defineComponent({
-  setup: () => {
+  setup: (props, context) => {
     const refOverlayVisible = ref(false)
     const onClickMenu = () => {
       refOverlayVisible.value = !refOverlayVisible.value
@@ -30,12 +31,12 @@ export const StartPage = defineComponent({
             <RouterLink to="/items/create">
               <FloatButton iconName='add' />
             </RouterLink>
-            {refOverlayVisible.value
-              && <Overlay onClose={() => refOverlayVisible.value = false} />
+            {refOverlayVisible.value &&
+              <Overlay onClose={() => refOverlayVisible.value = false} />
             }
-          </>,
+          </>
         }
       }</MainLayout>
     )
-  },
+  }
 })

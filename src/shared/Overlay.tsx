@@ -1,13 +1,12 @@
-import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
-import { RouterLink } from 'vue-router'
-import { Icon } from './Icon'
-import s from './Overlay.module.scss'
+import { defineComponent, PropType } from 'vue';
+import { RouterLink } from 'vue-router';
+import { Icon } from './Icon';
+import s from './Overlay.module.scss';
 export const Overlay = defineComponent({
   props: {
     onClose: {
-      type: Function as PropType<() => void>,
-    },
+      type: Function as PropType<() => void>
+    }
   },
   setup: (props, context) => {
     const close = () => {
@@ -31,13 +30,13 @@ export const Overlay = defineComponent({
             </li>
             <li>
               <RouterLink to="/export" class={s.action}>
-                <Icon name="export" class={s.icon} />
+                <Icon name="export" class={s.icon}/>
                 <span>导出数据</span>
               </RouterLink>
             </li>
             <li>
               <RouterLink to="/notify" class={s.action}>
-                <Icon name="notify" class={s.icon} />
+                <Icon name="notify" class={s.icon}/>
                 <span>记账提醒</span>
               </RouterLink>
             </li>
@@ -45,5 +44,5 @@ export const Overlay = defineComponent({
         </nav>
       </div>
     </>
-  },
+  }
 })
